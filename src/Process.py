@@ -4,8 +4,8 @@ from BruteForce import *
 
 def DisplayResult():
     
-    print("Result")
-    print("------\033[0;34;40m")
+    print("Processing Result")
+    print("-----------------\033[0;34;40m")
 
     start = time.time()    
     brute(len(VarGlobal.matriks), len(VarGlobal.matriks[0]))
@@ -31,7 +31,7 @@ def DisplayResult():
 
     end = time.time()
 
-    VarGlobal.time_processing = round((end-start)*1000,0)
+    VarGlobal.time_processing = int((end-start)*1000)
 
     print()
     print("\033[0;32;40m")

@@ -19,7 +19,7 @@ def CLI_Input():
     # token unik    
     while True:
         try:
-            tokens = input("\033[0;33;40mToken (XX YY ... ZZ) (case insensitive): \033[1;33;40m").upper()
+            tokens = input("\033[0;33;40mToken (XX YY ... ZZ) (case sensitive): \033[1;33;40m")
         except:
             print("\033[0;31;40mInvalid Type Input\033[0;33;40m")
         else:
@@ -37,6 +37,11 @@ def CLI_Input():
                         print("\033[0;31;40mToken harus terdiri dari 2 karakter alfanumerik\033[0;33;40m")
                         valid = False
                         break  
+                    else:
+                        if (tokens[i][0] not in VarGlobal.alfanumerik) or (tokens[i][1] not in VarGlobal.alfanumerik):
+                            print("\033[0;31;40mToken harus terdiri dari 2 karakter alfanumerik\033[0;33;40m")
+                            valid = False
+                            break
                 if valid:
                     break    
     

@@ -1,14 +1,13 @@
 import os
 import re
 import time
-import sys
 import VarGlobal
 
 def TXT_Input():
     finished = False
     while True:
-        filename = input("\033[0;33;40mInsert File Name : \033[1;33;40m")
-        if ".txt" not in filename:
+        filename = input("\033[0;33;40mInsert File Name : \033[1;33;40m").lower()
+        if not filename.endswith(".txt"):
             print("\033[0;31;40mOnly .txt file can be loaded\033[0;33;40m")
             continue
         try:
@@ -22,12 +21,15 @@ def TXT_Input():
         except:
             print("\033[0;31;40mFile not Found\033[0;33;40m")
         else:
+            if os.stat(path).st_size==0:
+                print("\033[0;31;40mFile is empty")
+                print("\033[1;33;40mPlease input non-empty file name")
+                continue
             print("\033[1;33;40mLoading file...")
             time.sleep(1)
             line_count = 0
             isValid = True
             for line in file:
-                
                 if line_count == 0:
                     try:
                         VarGlobal.buffer_size = int(line)
@@ -78,6 +80,11 @@ def TXT_Input():
                                     isValid = False
                                     print("\033[0;31;40mInvalid token in matriks detected")
                                     break
+                                else:
+                                    if (line[i][0] not in VarGlobal.alfanumerik) or (line[i][1] not in VarGlobal.alfanumerik):
+                                        print("\033[0;31;40mInvalid token in matriks detected")
+                                        isValid = False
+                                        break
                         if not isValid:
                             break
                         else:
@@ -113,7 +120,13 @@ def TXT_Input():
                                 isValid = False
                                 print("\033[0;31;40mInvalid token in sequence detected")
                                 break
+                            else:
+                                if (line[i][0] not in VarGlobal.alfanumerik) or (line[i][1] not in VarGlobal.alfanumerik):
+                                    print("\033[0;31;40mInvalid token in sequence detected\033[0;33;40m")
+                                    isValid = False
+                                    break
                     if not isValid:
+                        # print("\033[0;31;40mInvalid token in sequence detected")
                         break
                     else:
                         VarGlobal.list_sequence.append(line)
@@ -131,16 +144,18 @@ def TXT_Input():
                         VarGlobal.list_sequenceValue.append(value)
                         print("\033[0;32;40m✔ Sequence",(line_count-last_row_line)//2, "Reward")
                         time.sleep(0.3)
+                    if (line_count-last_row_line) == last_line:
+                        finished = True
+                        break
                 
-                else:
-                    finished = True
-                    break
+                # else:
+                #     finished = True
+                #     break
                     
                 line_count += 1
             
             if not isValid:
-                print("\033[1;31;40mProcess Terminated\033[0;37;40m")
-                sys.exit()
+                print("\033[1;31;40mFile Process Terminated\033[0;37;40m\n")
                 break
             else:
                 if finished:
@@ -174,4 +189,7 @@ def TXT_Input():
                     time.sleep(1)
                     print("\033[1;34;40m")
                     break
+                else:
+                    print("\033[0;31;40mInvalid file content")
+                    print("\033[1;31;40mFile Process Terminated\033[0;37;40m\n")
             file.close()
