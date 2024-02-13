@@ -1,7 +1,8 @@
 # Tucil1 - 13522103
-> Tugas Besar 2 IF2123 Aljabar Linier dan Geometri 
+> Tugas Kecil 1 IF 2211 Strategi Algoritma
 >
-> Aplikasi Aljabar Vektor dalam Sistem Temu Balik Gambar Semester I Tahun 2023/2024
+> Penyelesaian Cyberpunk 2077 Breach Protocol dengan Algoritma Brute Force
+
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -12,7 +13,6 @@
 * [Usage](#usage)
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
-* [Contact](#contact)
 
 
 ## General Information
