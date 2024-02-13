@@ -1,5 +1,5 @@
-# Tucil1 - 13522103
-> Tugas Kecil 1 IF 2211 Strategi Algoritma
+# Tugas Kecil 1 IF 2211 Strategi Algoritma
+> Steven Tjhia - 13522103
 >
 > Penyelesaian Cyberpunk 2077 Breach Protocol dengan Algoritma Brute Force
 
@@ -13,6 +13,7 @@
 * [Usage](#usage)
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
+* [Contact](#contact)
 
 
 ## General Information
