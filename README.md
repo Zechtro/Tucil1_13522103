@@ -24,67 +24,90 @@
 
 
 ## Features
-- Generate matrix and sequence(s) from _CLI_ input
-- Load matrix and sequence(s) information from .txt file
-- Save solution into .txt file
+- Input(s) validation (CLI and GUI)
+- Generate matrix and sequence(s) (CLI and GUI)
+- Load matrix and sequence(s) information from .txt file (CLI and GUI)
+- Save solution into .txt file (CLI and GUI)
+- Show the solution token path on the matrix (GUI)
+- Scrollable _sequence-value_ table (GUI)
 
 
-## Screenshots
-![Example screenshot](./img/1.png)
+## GUI Screenshots
+![Example screenshot](./src/assets/img/GUI_file_input.jpg)
 
-![Example screenshot](./img/2.png)
+![Example screenshot](./src/assets/img/GUI_manual_input.jpg)
 
 
 ## Setup
-Untuk memulai program, perlu dilakukan beberapa instalasi dan set up:
-1. Activate Virtual Environment
 
-    >In **src** directory
-    >
-    >Windows:
-    >
-    >`algeo02\Scripts\activate.bat`
-    >
-    >Unix/MacOS:
-    >
-    >`source algeo02/Scripts/activate`
+### Windows
+
+#### CLI
+
+1. From Tucil1_13522103 directory, navigate to "src" directory
+
+    `cd src`
+
+2. Run Main.py program
+
+    `python Main.py`
+
+#### GUI
+
+1. From Tucil1_13522103 directory, navigate to "src" directory
+
+    `cd src`
+
+2. Install flet
+
+    `pip install flet`
+
+3. Run app.py program
+
+    `python app.py`
     
-2. Intall Django
+### Linux / WSL
 
-    `pip install Django`
+#### CLI
 
-3. Install Numpy
+1. From Tucil1_13522103 directory, navigate to "src" directory
 
-    `pip install numpy`
+    `cd src`
 
-4. Install Pillow
+2. Run Main.py program
 
-    `pip install Pillow`
+    `python3 Main.py`
 
-5. Install Widget Tweaks
+#### GUI
 
-    `pip install django-widget-tweaks`
+1. From Tucil1_13522103 directory, navigate to "src" directory
 
-6. Install Whitenoise
+    `cd src`
 
-    `pip install whitenoise`
+2. Install flet
 
-7. RUN SERVER
+    `pip install flet`
 
-    >In **src/CBIR/** directory
-    >
-    >`python manage.py runserver`
-    >
-    >After that, go to the website address where the server is running
+3. Install GStreamer
+
+    `sudo apt install libgtk-3-0`
+
+    `sudo apt-get install gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav`
+
+    `sudo apt-get update`
+
+    `sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgstreamer-plugins-bad1.0-dev gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio`
+
+4. Run app.py program
+
+    `python3 app.py`
+
 
 
 ## Usage
-1. Pada Homepage, tekan tombol **START**
-2. Kemudian masukkan gambar masukan yang ingin dilakukan pencarian, setelah itu tekan tombol tanda panah yang berada pada bagian kanan
-3. Setelah itu masukkan kumpulan gambar yang akan dijadikan dataset, setelah itu tekan tombol tanda panah yang berada pada bagian kanan
-4. Pilih parameter yang ingin digunakan (warna/tekstur), kemudian tekan tombol **SEARCH!** untuk memulai pencarian
-5. Tunggu hingga hasil keluar
-6. Tekan tombol **Change Image** untuk mengganti gambar masukan dan tombol **Change Dataset** untuk mengganti dataset
+1. Choose input from .txt file or manual input, manual input will generate matrix and sequence(s)
+2. When brute force process is finished, the result will appear
+3. Save the result if you want
 
 
 ## Project Status
@@ -92,4 +115,4 @@ Project is: _complete_.
 
 
 ## Room for Improvement
-- Dapat ditambahkan loading screen ketika sedang dilakukan pemrosesan gambar dataset.
+- Program modularity on GUI program (app.py)

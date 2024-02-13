@@ -1,0 +1,14 @@
+5
+5 1
+BB CC CC CC BB
+5
+CC CC
+70
+AA AA BB BB
+51 
+CC BB BB AA
+-95
+BB BB CC
+31    
+BB CC CC BB
+-69

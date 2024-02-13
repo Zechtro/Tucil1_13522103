@@ -9,9 +9,8 @@ def saveSolution(path):
         elif i == 1:
             writeThis = " ".join(VarGlobal.BUFFER_MAX_VALUE_TOKEN) + "\n"
         elif i == 2:
-            # writeThis = "\n".join(VarGlobal.BUFFER_MAX_VALUE_COORDINATE) + "\n"
             if len(VarGlobal.BUFFER_MAX_VALUE_COORDINATE) == 0:
-                writeThis = ("\033[0;31;40mTidak ada solusi yang menghasilkan value bernilai positif\033[0;34;40m")
+                writeThis = ("Tidak ada solusi yang menghasilkan value bernilai positif")
             else:
                 N = len(VarGlobal.BUFFER_MAX_VALUE_TOKEN)
                 for j in range(0, N):

@@ -12,9 +12,7 @@ def brute(TotalRow, TotalCol):
         idx_col = Coordinate[1]
         Token = Matrix[idx_row][idx_col]
         VarGlobal.current_buffer_token.append(Token)
-        VarGlobal.current_buffer_coordinate.append(Coordinate.copy())
-        # print("AAAAAAAA", Coordinate)
-        # print("BBBBBBBB", VarGlobal.current_buffer_coordinate)    
+        VarGlobal.current_buffer_coordinate.append(Coordinate.copy())   
         
     def ResetCurrentBuffer():
         
@@ -45,10 +43,8 @@ def brute(TotalRow, TotalCol):
             NewMaxValue = MaxValue
             NewBufferMaxValToken = BufferMaxToken
             NewBufferMaxValCoordinate = BufferMaxCoordinate
-            
-            
+                     
         return [NewBufferMaxValToken, NewBufferMaxValCoordinate, NewMaxValue]
-        # list_bufferValue.append(bufferValue)
         
     def UpdateOffsets():
         global offsets
@@ -92,20 +88,8 @@ def brute(TotalRow, TotalCol):
             for j in range(0,len(VarGlobal.offsets)):
                 if (j%2 == 0):
                     VarGlobal.current_coordinate[0] = (VarGlobal.current_coordinate[0]+VarGlobal.offsets[j])%TotalRow
-                    # counter = 0
-                    # while (VarGlobal.current_coordinate in VarGlobal.current_buffer_coordinate) and (counter < TotalRow):
-                    #     VarGlobal.current_coordinate[0] = (VarGlobal.current_coordinate[0]+1)%TotalRow
-                    #     counter += 1
-                    # print("VERT", VarGlobal.current_coordinate)
-                    # print(VarGlobal.current_buffer_token)
                 else:
                     VarGlobal.current_coordinate[1] = (VarGlobal.current_coordinate[1]+VarGlobal.offsets[j])%TotalCol
-                    # counter = 0
-                    # while (VarGlobal.current_coordinate in VarGlobal.current_buffer_coordinate) and (counter < TotalCol):
-                    #     VarGlobal.current_coordinate[1] = (VarGlobal.current_coordinate[1]+1)%TotalCol
-                    #     counter += 1
-                    # print("HORZ", VarGlobal.current_coordinate)
-                    # print(VarGlobal.current_buffer_token) 
                 
                 if VarGlobal.current_coordinate not in VarGlobal.current_buffer_coordinate: 
                     AppendToken(VarGlobal.matriks, VarGlobal.current_coordinate)  

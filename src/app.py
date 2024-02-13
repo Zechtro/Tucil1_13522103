@@ -1,6 +1,5 @@
 import flet as ft
 import flet.canvas as cv
-import shutil
 import os
 import time
 import VarGlobal
@@ -11,6 +10,7 @@ import random
 alfanumerik = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"]
 
 def main(page: ft.Page):
+    page.title = "Brute Force"
     h = 800
     w = 1500
     page.window_height = h
@@ -170,10 +170,13 @@ def main(page: ft.Page):
             for j in range(0,VarGlobal.col):
                 token = VarGlobal.matriks[i][j]
                 coordinate_token = [i,j]
-                if coordinate_token == VarGlobal.BUFFER_MAX_VALUE_COORDINATE[0]:
-                    BGCOLOR="#2192FF"
-                elif coordinate_token in VarGlobal.BUFFER_MAX_VALUE_COORDINATE:
-                    BGCOLOR = Blue
+                if len(VarGlobal.BUFFER_MAX_VALUE_COORDINATE) > 0:
+                    if coordinate_token == VarGlobal.BUFFER_MAX_VALUE_COORDINATE[0]:
+                        BGCOLOR="#2192FF"
+                    elif coordinate_token in VarGlobal.BUFFER_MAX_VALUE_COORDINATE:
+                        BGCOLOR = Blue
+                    else:
+                        BGCOLOR = Light_Black
                 else:
                     BGCOLOR = Light_Black
                 cell_list.append(

@@ -126,7 +126,6 @@ def TXT_Input():
                                     isValid = False
                                     break
                     if not isValid:
-                        # print("\033[0;31;40mInvalid token in sequence detected")
                         break
                     else:
                         VarGlobal.list_sequence.append(line)
@@ -147,16 +146,15 @@ def TXT_Input():
                     if (line_count-last_row_line) == last_line:
                         finished = True
                         break
-                
-                # else:
-                #     finished = True
-                #     break
-                    
+     
                 line_count += 1
             
             if not isValid:
+                VarGlobal.matriks = []
+                VarGlobal.list_sequence = []
+                VarGlobal.list_sequenceValue = []
                 print("\033[1;31;40mFile Process Terminated\033[0;37;40m\n")
-                break
+                
             else:
                 if finished:
                     print("\033[1;32;40mData successfully loaded\033[1;32;40m")
@@ -191,5 +189,8 @@ def TXT_Input():
                     break
                 else:
                     print("\033[0;31;40mInvalid file content")
+                    VarGlobal.matriks = []
+                    VarGlobal.list_sequence = []
+                    VarGlobal.list_sequenceValue = []
                     print("\033[1;31;40mFile Process Terminated\033[0;37;40m\n")
             file.close()
