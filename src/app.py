@@ -176,9 +176,9 @@ def main(page: ft.Page):
                     elif coordinate_token in VarGlobal.BUFFER_MAX_VALUE_COORDINATE:
                         BGCOLOR = Blue
                     else:
-                        BGCOLOR = Light_Black
+                        BGCOLOR = Black
                 else:
-                    BGCOLOR = Light_Black
+                    BGCOLOR = Black
                 cell_list.append(
                     ft.Container(
                         alignment=ft.alignment.center,
@@ -251,7 +251,7 @@ def main(page: ft.Page):
                     cell_list.append(
                         ft.Container(
                             alignment=ft.alignment.center,
-                            bgcolor=Light_Black,
+                            bgcolor=Black,
                             height = container_cell_size,
                             width = container_cell_size,
                             content=ft.Column(
@@ -830,7 +830,7 @@ def main(page: ft.Page):
                                     cell_list.append(
                                         ft.Container(
                                             alignment=ft.alignment.center,
-                                            bgcolor=Light_Black,
+                                            bgcolor=Black,
                                             height = container_cell_size,
                                             width = container_cell_size,
                                             content=ft.Column(
@@ -1158,7 +1158,7 @@ def main(page: ft.Page):
                                 width=500,
                                 height=500,
                                 border_radius=5,
-                                bgcolor=Light_Black,
+                                bgcolor=Black,
                                 content=ft.Stack(
                                     # LOOP ROW
                                     controls=[

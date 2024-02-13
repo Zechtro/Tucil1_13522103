@@ -33,9 +33,9 @@
 
 
 ## GUI Screenshots
-![Example screenshot](./src/assets/img/GUI_file_input.jpg)
+![Example screenshot](./src/assets/img/GUI_file.jpg)
 
-![Example screenshot](./src/assets/img/GUI_manual_input.jpg)
+![Example screenshot](./src/assets/img/GUI_manual.jpg)
 
 
 ## Setup
